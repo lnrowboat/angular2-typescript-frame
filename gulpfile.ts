@@ -4,7 +4,6 @@ const gulp = require("gulp");
 const del = require("del");
 //const tsc = require("gulp-typescript");
 //const sourcemaps = require('gulp-sourcemaps');
-
 //const tslint = require('gulp-tslint');
 
 const $ = require('gulp-load-plugins')({
@@ -13,7 +12,7 @@ const $ = require('gulp-load-plugins')({
 });
 const tsProject = $.typescript.createProject("tsconfig.json");
 
-const buildFolder = 'build';
+const buildFolder = 'buildsource';
 const sourceFolder = 'src/';
 /**
  * Remove build directory.
@@ -61,7 +60,6 @@ gulp.task("cssresources", () => {
         .pipe(gulp.dest(buildFolder));
 });
 
-
 /**
  * Copy all required libraries into build directory.
  */
@@ -73,7 +71,9 @@ gulp.task("libs", () => {
         'reflect-metadata/Reflect.js',
         'rxjs/**/*.js',
         'zone.js/dist/**',
-        '@angular/**/bundles/**'
+        '@angular/**/bundles/**',
+        'tinymce/**',
+        'codemirror/**',
     ], { cwd: "node_modules/**" }) /* Glob required here. */
         .pipe(gulp.dest(buildFolder + "/lib"));
 });

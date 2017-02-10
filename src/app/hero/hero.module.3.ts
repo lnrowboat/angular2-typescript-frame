@@ -7,12 +7,13 @@ import { HeroDetailComponent } from './hero-detail.component';
 import { HeroListComponent }   from './hero-list.component';
 import { HighlightDirective }  from './highlight.directive';
 import { HeroRoutingModule }   from './hero-routing.module.3';
+import { TinyEditorComponent } from './jseditor.component';
 
 @NgModule({
   imports: [ CommonModule, FormsModule, HeroRoutingModule ],
   declarations: [
     HeroComponent, HeroDetailComponent, HeroListComponent,
-    HighlightDirective
+    HighlightDirective, TinyEditorComponent
   ]
 })
 export class HeroModule { }

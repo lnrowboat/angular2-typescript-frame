@@ -4,6 +4,7 @@ import { ActivatedRoute }    from '@angular/router';
 import { Hero,
          HeroService }    from './hero.service';
 
+
 @Component({
   template: `
     <h3 highlight>Hero Detail</h3>
@@ -29,6 +30,7 @@ export class HeroDetailComponent implements OnInit {
     this.heroService.getHero(id).then(hero => this.hero = hero);
   }
 }
+
 
 
 /*

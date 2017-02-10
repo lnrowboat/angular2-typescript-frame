@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Hero, HeroService } from './hero.service';
+import { TinyEditorComponent } from './jseditor.component';
 
 @Component({
   template: `
@@ -7,6 +8,7 @@ import { Hero, HeroService } from './hero.service';
     <div *ngFor='let hero of heroes | async'>
       <a routerLink="{{hero.id}}">{{hero.id}} - {{hero.name}}</a>
     </div>
+    <menx [elementId]="'my-editor-id'" (onEditorContentChange)="keyupHandler($event)" ></menx>
   `
 })
 export class HeroListComponent implements OnInit {
